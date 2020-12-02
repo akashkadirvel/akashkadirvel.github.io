@@ -173,7 +173,8 @@ img{
     transition: 0.5s;
 }
 .model-3d-0 a {
-    background:#5C5B5B;
+	/* background:#5C5B5B; */
+	background-color: transparent;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
@@ -196,7 +197,7 @@ img{
     -ms-backface-visibility: visible;
     -o-backface-visibility: visible;
     backface-visibility: visible;
-	color:#212121;
+	/* color:#212121; */
 	font-size:15px;
 }
 .model-3d-0 .back {
@@ -224,11 +225,20 @@ a.linkedin .front {
     background: #0b66c2;
 }
 a.whatsapp .front {
-    background: #6ee777;
+    background: #5fc757;
 }
 .twitter .back,.skype .back,.github .back,.linkedin .back, .whatsapp .back{
     background:#fff;
 }
+
+.w3_agile_social .front{
+	border-radius: 10%;
+}
+
+.w3_agile_social .back{
+	border-radius: 10%;
+}
+
 .model-3d-0 a:hover {
     -webkit-transform: rotateX(-90deg);
     -moz-transform: rotateX(-90deg);
@@ -251,6 +261,27 @@ a.whatsapp .front {
 	color: #000;
     font-size: 16px;
 }
+
+.twitter .back i{
+	color:  #00acee;
+}
+
+.skype .back i{
+	color:   #18afec;
+}
+
+.linkedin .back i{
+	color:  #0b66c2;
+}
+
+.whatsapp .back i{
+	color:  #5fc757;
+}
+
+.github .back i{
+	color:  #6a737d;
+}
+
 .w3ls_team_grid img {
     background: #e4e3e3;
     padding: 7px;
@@ -612,7 +643,9 @@ iframe {
     padding: 0.5em 1em 0.5em 0;
     border: 0;
     width: 95%;
-    border-bottom: 1px solid #929292;
+	border-bottom-width: 1px;
+	border-bottom-color: #777;
+	border-bottom-style: solid;
     background: none;
     -webkit-appearance: none;
 	outline: none;
@@ -641,11 +674,11 @@ input[type="checkbox"] {
 .styled-input {
 	width: 100%;
     position: relative;
-    margin: 0 0 1.6em;
+    margin: 0 0 1.6em 0;
 }
-.styled-input:nth-child(1),.styled-input:nth-child(3){
+/* .styled-input:nth-child(1),.styled-input:nth-child(3){
 	margin-left:0;
-}
+} */
 .textarea-grid{
 	float:none !important;
 	width:100% !important;
@@ -868,6 +901,8 @@ img.zoom-img:hover {
 .send{
 	background-color: #ec971f;
 	border-color: #ec971f;
+	padding: 8px 20px;
+    font-size: 16px;
 }
 
 .send:hover{

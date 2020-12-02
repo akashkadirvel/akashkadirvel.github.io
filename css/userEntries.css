@@ -1,0 +1,126 @@
+.pt-container{
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.lists{
+    width: 60%;
+    padding: 30px 0px;
+}
+
+.list{
+    width: 100%;
+    min-height: 60px;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.accordion{
+    -webkit-box-shadow: 0px 0.1875rem 0.4375rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0.1875rem 0.4375rem rgba(0, 0, 0, 0.25);
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-contact-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 33.33%;
+}
+
+.user-contact{
+    width: 33.3%;
+}
+
+.user-contact i{
+    padding-right: 20px;
+    color: #2dde98;
+}
+
+.contact-right a{
+    text-decoration: none;
+    color: #444;
+}
+
+.user-contact-name .fa-user{
+    font-size: 40px;
+    color: #2dde98;
+}
+
+.user-contact-name h5{
+    padding-left: 10px;
+    font-size: 20px;
+    color: #444;
+}
+
+.user-contact-name .fa-chevron-down, 
+.user-contact-name .fa-chevron-up{
+    margin-left: auto;
+    padding-left: 10px;
+    font-size: 20px;
+    color: #2dde98;
+}
+
+.panel {
+    padding: 20px 18px;
+    /* margin-bottom: 10px; */
+    text-align: left;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    border-bottom-left-radius: 05px;
+    border-bottom-right-radius: 05px;
+    transition: all 0.5s ease-in-out;
+  }
+
+.accordion-hr{
+    border: 1px solid #ddd;
+    margin: 0px 15%;
+    background-color: #fff;
+}
+
+.btn-logout{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+@media screen and ( max-width : 768px){
+    .lists{
+        width: 90%;
+    }
+
+    .user-contact, .user-contact-name{
+        width: 400%;
+    }
+    .arrow{
+        width: 10%;
+    }
+}
+
+@media screen and ( max-width : 480px){
+    .lists{
+        width: 90%;
+    }
+    .list{
+        flex-direction: column;
+    }
+    .user-contact, .user-contact-name{
+        width: 100%;
+    }
+
+    .user-contact{
+        padding: 20px 0px 0px;
+    }
+}
