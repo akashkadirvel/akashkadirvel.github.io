@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <title>Akash Kadirvel</title>
+<link rel="icon" href="images/logo1.png" type="image/gif" size="24x24">
 <!-- custom-theme -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,25 +33,22 @@
 <!-- font-awesome-icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome-icons -->
-
 <!-- googlefonts -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 <!-- //googlefonts -->
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <!-- Firebase files  -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="js/firebase.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <!-- End of Firebase files  -->
 
-<!-- 
-		Your web app's Firebase configuration
-		For Firebase JS SDK v7.20.0 and later, measurementId is optional 
---> 
-<script src="js/firebase.js"></script>
+    
+    <script src="js/utils.js"></script>
 
 
 
@@ -100,23 +98,23 @@
 					</div>
 					</h2>
 					<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						<li><a href="https://www.linkedin.com/in/akash-kadirvel-5425a3116/" class="linkedin">
+						<li><a href="https://www.linkedin.com/in/akash-kadirvel-5425a3116/" class="linkedin" target="_blank">
 							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="skype:akash_kadirvel?chat" class="skype">
+						<li><a href="skype:akash_kadirvel?chat" class="skype" target="_blank">
 							<div class="front"><i class="fa fa-skype" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-skype" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://github.com/akashkadirvel" class="github">
+						<li><a href="https://github.com/akashkadirvel" class="github" target="_blank">
 							<div class="front"><i class="fa fa-github" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-github" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://twitter.com/akashkadhirvel" class="twitter"> 
+						<li><a href="https://twitter.com/akashkadhirvel" class="twitter" target="_blank"> 
 							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://wa.me/919597324720" class="whatsapp">
+						<li><a href="https://wa.me/919597324720" class="whatsapp" target="_blank">
 							<div class="front"><i class="fa fa-whatsapp" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-whatsapp" aria-hidden="true"></i></div></a>
 						</li>
@@ -478,7 +476,7 @@
 	<div class="container">
 		<h3 class="heading">Contact Me</h3>
 		<div class="col-md-4 address">
-			<h3>Address</h3>
+			<!-- <h3>Address</h3> -->
 			<div class="mail-agileits-w3layouts">
 				<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
 				<div class="contact-right">
@@ -506,32 +504,34 @@
 			<div class="clear"></div>
 		</div>
 		<div class="col-md-4 form">
-			<form>
+			<form >
 				<div class="fields-grid">
-					<div class="styled-input agile-styled-input-top">
-						<input type="text" name="fname" required=""> 
+					<div class="styled-input  agile-styled-input-top">
+						<input type="text" name="fname" required> 
 						<label>Full Name</label>
 						<span></span>
 					</div>
 					<div class="styled-input">
-						<input type="email" name="email" required="">
+						<input type="email" name="email" required>
 						<label>Email</label>
 						<span></span>
 					</div>
 					<div class="styled-input">
-						<input type="tel" name="phone" required="">
+						<input type="tel" name="phone" required>
 						<label>Phone Number</label>
 						<span></span>
 					</div>
 					<div class="styled-input">
-						<textarea name="message" required=""></textarea>
+						<textarea name="message" required></textarea>
 						<label>Message</label>
 						<span></span>
 					</div>
 					<div class="clear"> </div>
 				</div>
 				<button type="button" class="btn btn-warning btn-lg send" 
-					onclick="validateEntry(); return false;">SEND</button>
+					onclick="validateEntry(); return false;">
+				Send
+			</button>
 			</form>	
 			<!-- data-toggle="modal" data-target="#myModal" -->
 		</div>
@@ -547,15 +547,8 @@
 <div class="modal fade" id="myModal" role="dialog">
 	<div class="modal-dialog modal-sm">
 	  <div class="modal-content">
-		<!-- <div class="modal-header">
-		  <button type="button" class="close" data-dismiss="modal">&times;</button>
-		  <h4 class="modal-title">Success</h4>
-		</div> -->
 		<div class="modal-body">
-				<!-- <span class="glyphicon glyphicon-ok"></span>   -->
-				<!-- <i class="fa fa-check" aria-hidden="true"></i> -->
 				<i class="fa fa-check-circle" aria-hidden="true"></i>
-				<!-- <i class="fa fa-check-circle-o" aria-hidden="true"></i> -->
 				<br>
 				Successfully submitted.
 		</div>
@@ -576,27 +569,23 @@
 		
 		<p>© 2020 Akash Kadirvel. All rights reserved | Hosted with <a href="http://github.com">GitHub</a></p>
 					<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						<!-- <li><a href="https://plus.google.com/106071033555650018470" class="pinterest">
-							<div class="front"><i class="fa fa-google" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-google" aria-hidden="true"></i></div></a>
-						</li> -->
-						<li><a href="https://www.linkedin.com/in/akash-kadirvel-5425a3116/" class="linkedin">
+						<li><a href="https://www.linkedin.com/in/akash-kadirvel-5425a3116/" class="linkedin" target="_blank">
 							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="skype:akash_kadirvel?chat" class="skype">
+						<li><a href="skype:akash_kadirvel?chat" class="skype" target="_blank">
 							<div class="front"><i class="fa fa-skype" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-skype" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://github.com/akashkadirvel" class="github">
+						<li><a href="https://github.com/akashkadirvel" class="github" target="_blank">
 							<div class="front"><i class="fa fa-github" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-github" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://twitter.com/akashkadhirvel" class="twitter"> 
+						<li><a href="https://twitter.com/akashkadhirvel" class="twitter" target="_blank"> 
 							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a>
 						</li>
-						<li><a href="https://wa.me/919597324720" class="whatsapp">
+						<li><a href="https://wa.me/919597324720" class="whatsapp" target="_blank">
 							<div class="front"><i class="fa fa-whatsapp" aria-hidden="true"></i></div>
 							<div class="back"><i class="fa fa-whatsapp" aria-hidden="true"></i></div></a>
 						</li>
