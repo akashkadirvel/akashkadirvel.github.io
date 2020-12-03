@@ -403,6 +403,12 @@ ul.hireme li a {
     background: #146eb4;
     color: #ffffff !important;
 }
+
+.w3ls_more:hover, .w3l_contact:hover{
+	border: 1px solid #53af4b;
+	background: #53af4b;
+}
+
 ul.hireme {
     margin-top: 3em;
     margin-bottom: 1em;
@@ -908,11 +914,19 @@ img.zoom-img:hover {
 .send:hover{
 	background-color: #ff9900;
 	border-color: #ff9900;
+	background-color: #53af4b;
+	border-color: #53af4b;
 }
 
 .fa-check, .fa-check-circle, .fa-check-circle-o{
 	font-size: 80px !important;
 	color: green;
+}
+
+.fa-moon{
+	color: #146EB4; 
+	font-size: 20px; 
+	transform: rotate(230deg);
 }
 
 .modal-body{
@@ -1385,6 +1399,10 @@ img.zoom-img:hover {
 	}
 	.form{
 		margin: 30px auto;
+	}
+
+	.address{
+		padding: 20px 0px;
 	}
 }
 @media screen and (max-width: 414px){

@@ -1285,6 +1285,7 @@
 .fa-sun-o:before {
   content: "\f185";
 }
+.fa-moon:before,
 .fa-moon-o:before {
   content: "\f186";
 }

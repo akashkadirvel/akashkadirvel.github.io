@@ -41,6 +41,8 @@ a,
   height: 100%;
   background-color: rgba(0, 0, 0, 0.76);
   background-color: #146eb4;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .container__child {
@@ -127,6 +129,8 @@ h2 {
 .signup__form {
   padding: 2.5rem;
   background: #fafafa;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .signup__form form{
@@ -165,11 +169,11 @@ label {
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
-  background: #146eb4;
+  background: #156eb4;
   border-radius: 5px;
 }
 .btn--form:focus, .btn--form:hover {
-  background:#146eb4dd;
+  background:#53af4b;
 }
 
 .signup__link {
@@ -193,5 +197,13 @@ label {
   }
   .signup__thumbnail{
     /* display: none; */
+  }
+  .signup__overlay{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .signup__form{
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
   }
 }
