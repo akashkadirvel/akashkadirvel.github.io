@@ -13,12 +13,12 @@ if (!firebase.apps.length) { //avoid re-initializing
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  var db = firebase.database();
+  var db = firebase.database().ref();
   var auth = firebase.auth();
  }
 
 function writeUserData(name = "", email = "", phone = "", message = "") {
-  db.ref().push({
+  db.push({
     name,
     email,
     phone,
@@ -35,7 +35,14 @@ function writeUserData(name = "", email = "", phone = "", message = "") {
 }
 
 function readUserData(){
-
+  db.on('value',
+  (snapshot) => {
+    renderLists(snapshot.val());
+  },
+  (error) => {
+    console.log(error);
+    alert("Error occured..")
+  })
 }
 
 function getCurrentUser(){

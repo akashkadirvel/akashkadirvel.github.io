@@ -75,3 +75,24 @@ function toggleAccordion(elementId = ""){
         document.getElementsByClassName("fa-"+elementId)[0].style.transform = "rotate(0deg)";
     }
 }
+
+function renderLists( data = {}){
+    var jkkk = "";
+    var keys = Object.keys(data);
+    if(keys.length != 0){
+        for(var i = 0; i < keys.length;  i++){
+            let keyA = 'accordion-'+i;
+            var kk = "";
+            kk += "<div class=\"accordion\" ><div class=\"list\" ><div class=\"user-contact-name\"><i class=\"fa fa-user\"></i>";
+            kk += "<h5>"+data[keys[i]].name+"</h5></div><div class=\"user-contact\"><div class=\"contact-right\">";
+            kk += "<a href=\"tel:"+data[keys[i]].phone+"\"><i class=\"fa fa-phone\"></i>"+data[keys[i]].phone+"</a></div>";
+            kk += "<div class=\"contact-right\"><a href=\"mailto:"+ data[keys[i]].email+"\"><i class=\"fa fa-envelope\"></i>"+data[keys[i]].email+"</a></div>";
+            kk += "</div><div class=\"user-contact-name arrow\" onclick=\"toggleAccordion(\'"+keyA+"\');\"><i class=\"fa fa-chevron-down fa-"+keyA+"\"></i></div></div>";
+            kk += "<div class=\"panel\" id =\""+keyA+"\"><h6><b>Message</b></h6><p>"+data[keys[i]].message+"</p></div></div>";
+            jkkk += kk;
+        }
+    }
+    else
+        jkkk += "<div class=\"no-data\">No User Entries</div>";
+    document.getElementById("lists").innerHTML = jkkk;
+}

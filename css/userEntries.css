@@ -96,6 +96,13 @@
     right: 30px;
 }
 
+.no-data{
+    text-align: center;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and ( max-width : 768px){
     .lists{
         width: 90%;

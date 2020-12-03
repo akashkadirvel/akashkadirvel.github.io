@@ -13,6 +13,11 @@
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
 
     <link rel="stylesheet" href="css/userEntries.css">
+    <!-- <script>
+        function renderLists( data = {} ){
+            console.log("inside: ", data);
+        }
+    </script> -->
     <!-- Firebase files  -->
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
@@ -26,74 +31,17 @@
     <script src="js/utils.js"></script>
 </head>
 
-<body >
+<body onload="readUserData();">
 <!-- onload="validateEntryUser();"> -->
     <div class="pt-container">
         <button class="btn btn-warning btn-logout" onclick="logout()">
             <i class="fa fa-power-off"></i> Logout 
         </button>
-        <div class="lists">
-            <div class="accordion" >
-            <div class="list" >
-                <div class="user-contact-name">
-                    <!-- <img src="images/logo1.png" width="40px" height="40px"/> -->
-                    <i class="fa fa-user"></i>
-                    <h5>Akash Kadirvel</h5>
-                </div>
-                <div class="user-contact">
-                    <div class="contact-right">
-                        <a href="tel:+919597324720">
-                            <i class="fa fa-phone"></i>
-                            (+91) 959 732 4720
-                        </a>
-                    </div>
-                    <div class="contact-right">
-                        <a href="mailto:">
-                            <i class="fa fa-envelope"></i>
-                            akashkadirvel@gmail.com
-                        </a>
-                    </div>
-                </div>
-                <div class="user-contact-name arrow" onclick="toggleAccordion('accordion-0');">
-                    <i class="fa fa-chevron-down fa-accordion-0" ></i>
-                </div>
-            </div>
-            <div class="panel" id = "accordion-0">
-                <h6><b>Message</b></h6>
-                <p>hello flkasdjlf laskdjflk lskadflj sdlkkfjl sdfwis dfksaifew jasldjfwe  lkasdfwoe lsdfljksdlfj  slkdjfowuefkns,dn lsjluwojefsndf  sdflj</p>
-            </div>
-            </div>
-        <div class="accordion">
-        <div class="list" >
-            <div class="user-contact-name">
-                <!-- <img src="images/logo1.png" width="40px" height="40px"/> -->
-                <i class="fa fa-user"></i>
-                <h5>Akash Kadirvel</h5>
-            </div>
-            <div class="user-contact">
-                <div class="contact-right">
-                    <a href="tel:+919597324720">
-                        <i class="fa fa-phone"></i>
-                        (+91) 959 732 4720
-                    </a>
-                </div>
-                <div class="contact-right">
-                    <a href="mailto:">
-                        <i class="fa fa-envelope"></i>
-                        akashkadirvel@gmail.com
-                    </a>
-                </div>
-            </div>
-            <div class="user-contact-name arrow" onclick="toggleAccordion('accordion-1');">
-                <i class="fa fa-chevron-down fa-accordion-1" ></i>
-            </div>
+        <div class="lists" id="lists">
+            <!-- <div class="accordion" >
+                <div class="list" ></div>
+            </div> -->
         </div>
-        <div class="panel" id = "accordion-1">
-            <h6><b>Message</b></h6>
-            <p>hello flkasdjlf laskdjflk lskadflj sdlkkfjl sdfwis dfksaifew jasldjfwe  lkasdfwoe lsdfljksdlfj  slkdjfowuefkns,dn lsjluwojefsndf  sdflj</p>
-        </div>
-        </div>
-    </div>
     </div>
 </body>
 </html>
