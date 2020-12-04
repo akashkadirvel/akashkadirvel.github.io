@@ -35,7 +35,8 @@ function validateEntry(){
     var phone = document.getElementsByName("phone")[0].value;
     var email = document.getElementsByName("email")[0].value;
     var message = document.getElementsByName("message")[0].value;
-  
+    var track = "contact-form";
+
     if(email == "")
         alert("Email ID Required");
     else if(phone == "")
@@ -44,7 +45,7 @@ function validateEntry(){
         alert("Name Required");
     else{
         buttonChange("send", "sending...", true);
-        writeUserData(name, email, phone, message);
+        writeUserData(name, email, phone, message, track);
     }
         
 }
@@ -78,18 +79,24 @@ function toggleAccordion(elementId = ""){
 
 function renderLists( data = {}){
     var jkkk = "";
-    var keys = Object.keys(data);
-    if(keys.length != 0){
-        for(var i = 0; i < keys.length;  i++){
-            let keyA = 'accordion-'+i;
-            var kk = "";
-            kk += "<div class=\"accordion\" ><div class=\"list\" ><div class=\"user-contact-name\"><i class=\"fa fa-user\"></i>";
-            kk += "<h5>"+data[keys[i]].name+"</h5></div><div class=\"user-contact\"><div class=\"contact-right\">";
-            kk += "<a href=\"tel:"+data[keys[i]].phone+"\"><i class=\"fa fa-phone\"></i>"+data[keys[i]].phone+"</a></div>";
-            kk += "<div class=\"contact-right\"><a href=\"mailto:"+ data[keys[i]].email+"\"><i class=\"fa fa-envelope\"></i>"+data[keys[i]].email+"</a></div>";
-            kk += "</div><div class=\"user-contact-name arrow\" onclick=\"toggleAccordion(\'"+keyA+"\');\"><i class=\"fa fa-chevron-down fa-"+keyA+"\"></i></div></div>";
-            kk += "<div class=\"panel\" id =\""+keyA+"\"><h6><b>Message</b></h6><p>"+data[keys[i]].message+"</p></div></div>";
-            jkkk += kk;
+    if(data != null){
+        var keys = Object.keys(data);
+        if(keys.length != 0){
+            for(var i = 0; i < keys.length;  i++){
+                let keyA = 'accordion-'+i;
+                var kk = "";
+                kk += "<div class=\"accordion\" ><div class=\"list\" ><div class=\"user-contact-name\"><i class=\"fa fa-user\"></i>";
+                kk += "<h5>"+( data[keys[i]].name || "NA" )+"</h5></div><div class=\"user-contact\"><div class=\"contact-right\">";
+                kk += "<a href=\"tel:"+data[keys[i]].phone+"\"><i class=\"fa fa-phone\"></i>"+( data[keys[i]].phone || "NA" )+"</a></div>";
+                kk += "<div class=\"contact-right\"><a href=\"mailto:"+ data[keys[i]].email+"\"><i class=\"fa fa-envelope\"></i>"+( data[keys[i]].email || "NA" )+"</a></div>";
+                kk += "</div><div class=\"user-contact-arrow\"><div onclick=\"deleteData(\'"+keys[i]+"\');\"><i class=\"fa fa-trash \"></i></div>"
+                kk += "<div class = \"arrow\" onclick=\"toggleAccordion(\'"+keyA+"\');\"><i class=\"fa fa-chevron-down fa-"+keyA+"\"></i></div></div></div>";
+                kk += "<div class=\"panel\" id =\""+keyA+"\">"
+                kk +=   "<div class=\"list\"><div><h6><b>Posted At: </b></h6><p>"+( new Date(data[keys[i]].timestamp) || "NA" ) +"</p></div>"
+                kk +=   "<div><h6><b>Track from: </b></h6><p>"+( data[keys[i]].track || "NA" ) +"</p></div></div>"
+                kk +=   "<div class=\"message\"><h6><b>Message</b></h6><p>"+( data[keys[i]].message || "NA" ) +"</p></div></div></div>";
+                jkkk += kk;
+            }
         }
     }
     else

@@ -108,20 +108,30 @@
     align-items: center;
 }
 
-@media screen and ( max-width : 768px){
+.message{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.arrow{
+    padding-top: 10px;
+}
+
+@media screen and ( max-width : 1024px){
     .lists{
         width: 90%;
     }
 
     .user-contact, .user-contact-name{
-        width: 400%;
+        width: 40%;
     }
     .arrow{
         width: 10%;
     }
 }
 
-@media screen and ( max-width : 480px){
+@media screen and ( max-width : 520px){
     .lists{
         width: 90%;
     }
@@ -134,5 +144,15 @@
 
     .user-contact{
         padding: 20px 0px 0px;
+    }
+    .user-contact-arrow{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .arrow{
+        padding: 0px;
     }
 }

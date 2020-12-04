@@ -10,6 +10,10 @@ html, body{
 	background:#ffffff;
 	margin: 0;
 }
+body::-webkit-scrollbar{
+	display: none;
+}
+
 p,ul li,ol li{
 	margin:0;
 	font-size:15px;
@@ -935,6 +939,23 @@ img.zoom-img:hover {
 	margin-right: auto;
 }
 
+.call-logo-tool-tip{
+    position: fixed;
+    bottom: 10px;
+    z-index: 9;
+    right: 80px;
+    width: 186px;
+    height: 72px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+	background-color: #ffffff;
+	display: none;
+}
+
+.floating-icon:hover + .call-logo-tool-tip{
+	display: block;
+}
+
 /* Responsive design */
 @media screen and (max-width: 1440px){
 	.banner {
@@ -1088,6 +1109,30 @@ img.zoom-img:hover {
 	.contact input[type="submit"] {
 		margin-bottom: 2em;
 	}
+
+	.about img{
+		display: block;
+		max-width: 400px;
+		margin: 0px auto;
+	}
+	.about .aboutright{
+		display: block;
+		max-width: 600px;
+		margin: 0px auto;
+	}
+
+	.skillsright{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.skills-other{
+		width: 40%;
+		padding: 20px;
+	}
+	.form {
+		margin: 30px auto;
+	}
 }
 @media screen and (max-width: 900px){
 	.banner {
@@ -1120,12 +1165,13 @@ img.zoom-img:hover {
 		width: 55%;
 	}
 	.arrow_fix{
-		margin: 35%;
-		width: 25%;
+		margin: 20% auto 10%;
+		width: 10%;
 	}
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -700px 0px;
+		background: url(../images/banner1.jpg) no-repeat -300px 0px;
 		background-size: cover;
+		max-height: 700px;
 	}
 	.gallery-grids {
 		padding: 0 5px;
@@ -1133,8 +1179,30 @@ img.zoom-img:hover {
 	.gallery-grids.grid-mdl {
 		margin-top: .6em;
 	}
+	.about img{
+		display: block;
+		max-width: 400px;
+		margin: 0px auto;
+	}
+	.about .aboutright{
+		display: block;
+		max-width: 600px;
+		margin: 0px auto;
+	}
+	.skillsright{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.skills-other{
+		width: 40%;
+		padding: 20px;
+	}
+	.form {
+		margin: 30px auto;
+	}
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
 	.education, .skills, .experience, .contact, .gallery, .count-agileits {
 		padding: 2em 0;
 	}
@@ -1313,6 +1381,15 @@ img.zoom-img:hover {
 	.arrow_fix{
 		margin: 35%;
 		width: 25%;
+	}
+	.skillsright{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.skills-other{
+		width: 80%;
 	}
 }
 @media screen and (max-width: 480px){

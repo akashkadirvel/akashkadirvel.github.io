@@ -13,16 +13,17 @@ if (!firebase.apps.length) { //avoid re-initializing
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  var db = firebase.database().ref();
+  var db = firebase.database();
   var auth = firebase.auth();
  }
 
-function writeUserData(name = "", email = "", phone = "", message = "") {
-  db.push({
+function writeUserData(name = "", email = "", phone = "", message = "", track = "contact-form") {
+  db.ref().push({
     name,
     email,
     phone,
     message,
+    track,
     timestamp: firebase.database.ServerValue.TIMESTAMP
   }, (error) => {
     if (error) {
@@ -34,8 +35,20 @@ function writeUserData(name = "", email = "", phone = "", message = "") {
   });
 }
 
+function deleteData (path = "/") {
+  console.log("path: ", path);
+  db.ref(path).remove()
+  .then( () => {
+    readUserData();
+  }).catch((error) => {
+    console.log(error);
+    alert("delete failed");
+  });
+  
+}
+
 function readUserData(){
-  db.on('value',
+  db.ref().on('value',
   (snapshot) => {
     renderLists(snapshot.val());
   },
